@@ -18,16 +18,7 @@ jobs:
       uses: abatilo/actions-poetry@v2.0.0
       with:
         poetry-version: 1.1.4 #you can add your own version or a matrix of versions here
-
-    - name: Cache Poetry virtualenv
-      uses: actions/cache@v1
-      id: cache
-      with:
-        path: ~/.virtualenvs
-        key: poetry-${{ hashFiles('**/poetry.lock') }}
-        restore-keys: |
-          poetry-${{ hashFiles('**/poetry.lock') }}
-
+    ############ REMOVE THIS AFTER YOU HAVE CHANGED PROJECT NAME IN `pyproject.toml`############ 
     - name: Set Poetry config
       run: |
         poetry config virtualenvs.in-project false
@@ -35,7 +26,29 @@ jobs:
 
     - name: Install Dependencies
       run: poetry install
-      if: steps.cache.outputs.cache-hit != 'true'
+    ############ ############ ############ ############ ############ ############ ############
+    
+    ############ UNCOMMENT THIS AFTER YOU HAVE CHANGED PROJECT NAME IN `pyproject.toml`############ 
+
+#     - name: Cache Poetry virtualenv
+#       uses: actions/cache@v1
+#       id: cache
+#       with:
+#         path: ~/.virtualenvs
+#         key: poetry-${{ hashFiles('**/poetry.lock') }}
+#         restore-keys: |
+#           poetry-${{ hashFiles('**/poetry.lock') }}
+
+#     - name: Set Poetry config
+#       run: |
+#         poetry config virtualenvs.in-project false
+#         poetry config virtualenvs.path ~/.virtualenvs
+
+#     - name: Install Dependencies
+#       run: poetry install
+#       if: steps.cache.outputs.cache-hit != 'true'
+      
+    ############ ############ ############ ############ ############ ############ ############
 
     - name: Read all notebooks
       run: |
