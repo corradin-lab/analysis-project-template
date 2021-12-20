@@ -13,7 +13,8 @@ jupyter = "^1.0.0"
 kedro = "^0.17.6"
 tqdm = "^4.62.3"
 pydantic = "^1.8.2"
-Hydra = "^2.5"
+hydra-core = "^1.1.1"
+copier = "^5.1.0"
 
 [tool.kedro]
 package_name = "your_project_name"
