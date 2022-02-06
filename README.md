@@ -1,3 +1,20 @@
+# Things to change after cloning the template
+
+- change project name in `pyproject.toml`
+- poetry install (need previous step to be done for the current project to install)
+- Follow [nbdev tutorial | nbdev](https://nbdev.fast.ai/tutorial.html#Note-if-using-a-subdirectory-to-contain-.ipynb-files-instead-of-the-project-root)
+	- settings.ini
+		- Change `lib_name` and other settings
+		- Choose `doc_base_url` based on public or private page
+	- set up git hooks using [nbdev_install_git_hooks](https://nbdev.fast.ai/cli.html#nbdev_install_git_hooks )
+	- `nbdev_build_lib`
+	- `nbdev_build_docs`
+- Enable caching again in `.github/workflows/main.yml`
+- `git add .`
+- `git commit -m “Configure package from template”`
+- Set up GitHub pages
+
+
 # nbdev template
 
 Use this template to more easily create your [nbdev](https://nbdev.fast.ai/) project.
